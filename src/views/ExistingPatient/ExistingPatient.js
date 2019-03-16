@@ -3,13 +3,21 @@ import { Grid, Row, Col, Button } from 'react-bootstrap';
 import PropTypes from "prop-types";
 
 import {Card} from 'components/Card/Card.jsx';
-import './dashboard.css'
+import '../Dashboard/dashboard.css'
 
-class Dashboard extends Component {
+
+class ExistingPatient extends Component {
 
     static contextTypes = {
         router: PropTypes.object
     };
+    state = {
+        patient_no: ''
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+    }
    
     render() {
         return (
@@ -25,14 +33,12 @@ class Dashboard extends Component {
                                 content={
                                     <div className="ct-chart center">
                                     <div>
-                                        <h1>Welcome!</h1>
-                                        <h4>Please select an option below
-                                        <h5>Add a new patient record or view record of an existing patient</h5>
-                                        </h4>
-                                    </div>
-                                    <div>
-                                        <Button bsStyle="primary" className="button" onClick={()=>this.context.router.history.push('/admin/new-patient')}>New Patient</Button>
-                                        <Button bsStyle="success" className="button" onClick={()=>this.context.router.history.push('/admin/existing-patient')}>Existing Patient</Button>
+                                        <h4>Please enter the Patient No: below</h4>
+                                        <form  onSubmit={this.onSubmit.bind(this)}>
+                                            <input required placeholder = 'Patient No:'
+                onChange = {(e) => {this.setState({patient_no: e.target.value})}} className = "form-control" />
+                                            <Button className='button' bsStyle='primary' type='submit'>Submit</Button>
+                                        </form>
                                     </div>
                                     </div>
                                     }
@@ -45,4 +51,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default ExistingPatient;

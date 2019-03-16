@@ -3,8 +3,6 @@ import { Navbar } from 'react-bootstrap';
 
 import HeaderLinks from './HeaderLinks.jsx';
 
-import appRoutes from 'routes/app.jsx';
-
 class Header extends Component{
     constructor(props){
         super(props);
@@ -18,7 +16,6 @@ class Header extends Component{
             this.setState({
                 sidebarExists : true
             });
-
         }
         e.preventDefault();
         document.documentElement.classList.toggle('nav-open');

@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
-import { Collapse } from 'react-bootstrap';
 import HeaderLinks from '../Header/HeaderLinks.jsx';
 
-import imagine from 'assets/img/sidebar-3.jpg';
+import imagine from 'assets/img/sidephoto.jpg';
 import logo from 'assets/img/reactlogo.png';
 
 class Sidebar extends Component{
@@ -35,10 +34,9 @@ class Sidebar extends Component{
                             <div className="logo-img">
                                 <img src={logo} alt="logo_image"/>
                             </div>
-
                         </a>
                         <a href="#" className="simple-text logo-normal">
-                            Maternity System
+                            Health Care System
                         </a>
                     </div>
                 <div className="sidebar-wrapper">
@@ -60,19 +58,6 @@ class Sidebar extends Component{
                         }
                    
                     </ul>
-                    {/* <Collapse>
-                       <div>
-                       <ul className="nav">
-                     <li className={"active active-pro"}>
-                  <NavLink to="/tables/regular-tables">Regular Table</NavLink>
-                </li>
-                <li className={"active active-pro"}>
-                  <NavLink to="/tables/extended-tables">Extended Tables</NavLink>
-                </li>
-                </ul>
-                        </div>
-                       
-                       </Collapse> */}
                 </div>
             </div>
         );
