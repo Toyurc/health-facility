@@ -86,7 +86,7 @@ export const MARITAL_STATUS = [
     },
 ];
 
-export const BASE_URL = 'http://localhost:8000/api/v1/';
+export const BASE_URL = 'https://api-health-facility.herokuapp.com/api/v1/';
 
 export const GetDate = (date: any) :string => {
     if (!date) {
