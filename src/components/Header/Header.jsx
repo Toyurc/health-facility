@@ -62,7 +62,7 @@ class Header extends Component{
                     <Navbar.Toggle onClick={this.mobileSidebarToggle}/>
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <HeaderLinks />
+                    <HeaderLinks context={this} />
                 </Navbar.Collapse>
             </Navbar>
         );
