@@ -14,7 +14,7 @@ class HeaderLinks extends Component{
                 <Nav>
                 </Nav>
                 <Nav pullRight>
-                    <NavItem eventKey={3} href="#" onClick={()=>this.context.router.history.push('/')}>Log out</NavItem>
+                    <NavItem eventKey={3} href="#" onClick={()=>this.props.history.push('/')}>Log out</NavItem>
                 </Nav>
             </div>
         );
