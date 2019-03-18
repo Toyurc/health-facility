@@ -29,6 +29,7 @@ class Login extends Component {
     componentWillMount() {
         document.body.style.backgroundImage = 'url(' + success + ')';
         document.body.style.backgroundSize = 'cover';
+        localStorage.clear();
     }
     componentWillUnmount() {
         document.body.style.backgroundImage = null;
@@ -50,7 +51,7 @@ class Login extends Component {
                     loading: false
                 })
                 if (resp.status === 200) {
-                    this.context.router.history.push('/admin/dashboard', {details: resp.data});
+                    this.props.history.push('/admin/dashboard', {details: resp.data});
                     localStorage.setItem('login_token', JSON.stringify(resp.data));
                 }
             })
@@ -79,7 +80,7 @@ class Login extends Component {
                                     <hr />
                                     <h5 style={{ textAlign: 'center', marginBottom: 20 }}><i>Enter Health Care Facility Number to access your Dashboard</i></h5>
                                     {
-                                        this.state.error && <Alert dismissible bsStyle="danger">
+                                        this.state.error && <Alert bsStyle="danger">
                                             <h1>Oh snap! You got an error!</h1>
                                             <p>
                                                 Please make sure you entered the correct health facility number
