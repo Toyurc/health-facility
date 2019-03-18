@@ -342,7 +342,7 @@ formSubmit(e) {
                                         <Col md={12}>
                                             <Col md={12}>
                                                 {
-                                                    this.state.patient_details.comment.length > 0 &&
+                                                    this.state.patient_details.comment.length > 0 ?
                                                     <div>
                                                         <h3>Doctor's Comments</h3>
                                                     {
@@ -353,6 +353,8 @@ formSubmit(e) {
                                                             </div>) 
                                                     }
                                                 </div>
+                                                :
+                                                <div><h4>No Comment yet.</h4></div>
                                                 }
                                             </Col>
                                             <Col md={12}>

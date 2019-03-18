@@ -46,7 +46,6 @@ class Login extends Component {
         })
         Axios.get(`${BASE_URL}hospital/${this.state.facility_reg_no}`)
             .then(resp => {
-                console.log(resp.data);
                 this.setState({
                     loading: false
                 })

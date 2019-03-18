@@ -32,8 +32,8 @@ class Dashboard extends Component {
                                                 <h5>Add a new patient record or view record of an existing patient</h5>
                                             </div>
                                             <div>
-                                                <Button bsStyle="primary" className="button" onClick={() => this.context.router.history.push('/admin/new-patient')}>New Patient</Button>
-                                                <Button bsStyle="success" className="button" onClick={() => this.context.router.history.push('/admin/existing-patient')}>Existing Patient</Button>
+                                                <Button bsStyle="primary" className="button" onClick={() => this.props.history.push('/admin/new-patient')}>New Patient</Button>
+                                                <Button bsStyle="success" className="button" onClick={() => this.props.history.push('/admin/existing-patient')}>Existing Patient</Button>
                                             </div>
                                         </div>
                                     }
