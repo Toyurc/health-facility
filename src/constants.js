@@ -84,4 +84,15 @@ export const MARITAL_STATUS = [
         id: 4,
         status: 'Widowed'
     },
-]
+];
+
+export const BASE_URL = 'http://localhost:8000/api/v1/';
+
+export const GetDate = (date: any) :string => {
+    if (!date) {
+        return '';
+    }
+    let newDate  = new Date(date);
+    return  newDate.getUTCFullYear() +'-'+ (newDate.getMonth()+1) +'-'+ (newDate.getDate());
+}
+
