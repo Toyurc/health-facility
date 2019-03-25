@@ -85,6 +85,20 @@ export const MARITAL_STATUS = [
         status: 'Widowed'
     },
 ];
+export const STATUS = [
+    {
+        id: 0,
+        status: 'Select Status'
+    },
+    {
+        id: 1,
+        status: 'Positive'
+    },
+    {
+        id: 2,
+        status: 'Negative'
+    },
+];
 
 export const BASE_URL = 'https://api-health-facility.herokuapp.com/api/v1/';
 

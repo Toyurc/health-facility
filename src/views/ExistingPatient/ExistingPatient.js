@@ -8,7 +8,7 @@ import alertify from 'alertifyjs';
 
 import {Card} from 'components/Card/Card.jsx';
 import '../Dashboard/dashboard.css'
-import { BLOOD_GROUP, RELIGION, GENOTPYE, MARITAL_STATUS,BASE_URL, GetDate } from '../../constants'
+import { BLOOD_GROUP, RELIGION, GENOTPYE, MARITAL_STATUS,BASE_URL, GetDate, STATUS } from '../../constants'
 
 
 
@@ -28,6 +28,10 @@ class ExistingPatient extends Component {
         last_name:'',
         dob:'',
         phone_number:'',
+        hiv: '',
+        asthma: '',
+        blood_pressure_high: '',
+        blood_pressure_low: '',
         address:'',
         weight:'',
         height:'',
@@ -108,6 +112,10 @@ formSubmit(e) {
         blood_group,
         genotype,
         religion,
+        hiv,
+        asthma,
+        blood_pressure_high,
+        blood_pressure_low,
         patient_no,
         marital_status,
         known_allergies,
@@ -124,6 +132,10 @@ formSubmit(e) {
         weight,
         height,
         blood_group,
+        hiv,
+        asthma,
+        blood_pressure_high,
+        blood_pressure_low,
         genotype,
         religion,
         patient_no,
@@ -287,6 +299,56 @@ formSubmit(e) {
                                                 ))
                                             }
                                             </select>
+                                        </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md={6}>
+                                        <div className={`form-group in-line`} >
+                                            <label>HIV/AIDS< strong className='error-message'> *</strong> <em><strong className='bold-text'>{this.state.patient_details.hiv}</strong></em></label >
+                                            <select
+                                            required
+                                            onChange={(e) => { this.setState({ hiv: e.target.value }) }}
+                                            className="form-control"
+                                            >
+                                            {
+                                                STATUS.map(status => (
+                                                <option key={status.id} value={status.status}>{status.status}</option>
+                                                ))
+                                            }
+                                            </select>
+                                        </div>
+                                        </Col>
+                                        <Col md={6}>
+                                        <div className={`form-group in-line`} >
+                                            <label>Asthma< strong className='error-message'> *</strong> <em><strong className='bold-text'>{this.state.patient_details.asthma}</strong></em></label >
+                                            <select
+                                            required
+                                            onChange={(e) => { this.setState({ asthma: e.target.value }) }}
+                                            className="form-control"
+                                            >
+                                            {
+                                                STATUS.map(status => (
+                                                <option key={status.id} value={status.status}>{status.status}</option>
+                                                ))
+                                            }
+                                            </select>
+                                        </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col md={6}>
+                                        <div className={`form-group in-line`} >
+                                            <label>Blood Pressure (High)< strong className='error-message'> *</strong></label >
+                                            <input required type={'number'} min='1' placeholder='120' value={this.state.patient_details.blood_pressure_high}
+                                            onChange={(e) => { this.setState({ blood_pressure_high: e.target.value }) }} className="form-control" />
+                                        </div>
+                                        </Col>
+                                        <Col md={6}>
+                                        <div className={`form-group in-line`} >
+                                            <label>Blood Pressure (Low)< strong className='error-message'> *</strong></label >
+                                            <input required min='1' type={'number'} placeholder='80' value={this.state.patient_details.blood_pressure_low}
+                                            onChange={(e) => { this.setState({ blood_pressure_low: e.target.value }) }} className="form-control" />
                                         </div>
                                         </Col>
                                     </Row>

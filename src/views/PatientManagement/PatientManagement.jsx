@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import Button from 'elements/CustomButton/CustomButton.jsx';
 import alertify from 'alertifyjs';
-import { BLOOD_GROUP, RELIGION, GENOTPYE, MARITAL_STATUS, BASE_URL } from '../../constants'
+import { BLOOD_GROUP, RELIGION, GENOTPYE, MARITAL_STATUS, BASE_URL,STATUS } from '../../constants'
 
 class PatientManagement extends Component {
   constructor(props) {
@@ -26,6 +26,10 @@ class PatientManagement extends Component {
       weight: '',
       height: '',
       blood_group: '',
+      hiv: '',
+      asthma: '',
+      blood_pressure_high: '',
+      blood_pressure_low: '',
       genotype: '',
       religion: '',
       marital_status: '',
@@ -52,6 +56,10 @@ class PatientManagement extends Component {
       weight,
       height,
       blood_group,
+      hiv,
+      asthma,
+      blood_pressure_high,
+      blood_pressure_low,
       genotype,
       religion,
       marital_status,
@@ -69,6 +77,10 @@ class PatientManagement extends Component {
       weight,
       height,
       blood_group,
+      hiv,
+      asthma,
+      blood_pressure_high,
+      blood_pressure_low,
       genotype,
       religion,
       marital_status,
@@ -205,6 +217,54 @@ class PatientManagement extends Component {
                             ))
                           }
                         </select>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <div className={`form-group in-line`} >
+                        <label>HIV/AIDS< strong className='error-message'> *</strong></label >
+                        <select
+                          onChange={(e) => { this.setState({ hiv: e.target.value }) }}
+                          className="form-control"
+                        >
+                          {
+                            STATUS.map(status => (
+                              <option key={status.id} value={status.status}>{status.status}</option>
+                            ))
+                          }
+                        </select>
+                      </div>
+                    </Col>
+                    <Col md={6}>
+                      <div className={`form-group in-line`} >
+                        <label>Asthma< strong className='error-message'> *</strong></label >
+                        <select
+                          onChange={(e) => { this.setState({ asthma: e.target.value }) }}
+                          className="form-control"
+                        >
+                          {
+                            STATUS.map(status => (
+                              <option key={status.id} value={status.status}>{status.status}</option>
+                            ))
+                          }
+                        </select>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <div className={`form-group in-line`} >
+                        <label>Blood Pressure (High)< strong className='error-message'> *</strong></label >
+                        <input required type={'number'} min='1' placeholder='120'
+                          onChange={(e) => { this.setState({ blood_pressure_high: e.target.value }) }} className="form-control" />
+                      </div>
+                    </Col>
+                    <Col md={6}>
+                      <div className={`form-group in-line`} >
+                        <label>Blood Pressure (Low)< strong className='error-message'> *</strong></label >
+                        <input required min='1' type={'number'} placeholder='80'
+                          onChange={(e) => { this.setState({ blood_pressure_low: e.target.value }) }} className="form-control" />
                       </div>
                     </Col>
                   </Row>
